@@ -93,4 +93,4 @@ Co-authored the predictive data-modeling and computational-parallelization secti
 
 ## Reach me
 
-[LinkedIn](https://linkedin.com/in/saiharikagade) · gadesaiharika@gmail.com · Starkville, MS
+[Portfolio](https://gadesaiharika.github.io) · [LinkedIn](https://linkedin.com/in/saiharikagade) · gadesaiharika@gmail.com · Starkville, MS
