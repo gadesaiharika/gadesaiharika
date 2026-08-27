@@ -15,7 +15,7 @@ intermittent failure that was quietly discarding an hour of compute per run.
 
 ## Projects
 
-Both run end to end from a clean clone. No manual data downloads, no Docker.
+All three run end to end from a clean clone. No manual data downloads, no Docker.
 
 ### [hrrp-readmission-analytics](https://github.com/gadesaiharika/hrrp-readmission-analytics)
 **30-day readmission analytics and CMS HRRP risk** · PostgreSQL · SQL · Python · Tableau
@@ -46,6 +46,24 @@ adjustment codes instead of denial codes produces denial rates above 90%.
 Findings: prior authorization is 50% of denied dollars, 85% of denied dollars were preventable, and
 $10.6M sits in denials nobody worked.
 
+### [hl7-interface-monitor](https://github.com/gadesaiharika/hl7-interface-monitor)
+**HL7 v2 parsing, validation, and interface health** · Python, standard library only
+
+Parses HL7 v2 message traffic — segments, fields, repetitions, components, escape sequences — with
+the delimiters read from each message's MSH header rather than assumed. 21 validation rules across
+structure, header, patient, visit, order, and result, each with a severity that says what actually
+happens to the message: rejected outright, or filed anyway with something wrong inside it.
+
+That second category is the point. Critical failures announce themselves; warnings are what turn
+into "why does this report look wrong" three months later.
+
+*Verified two ways.* A 173-check self-test requires every injectable fault to trigger its rule, and
+120 clean messages to produce zero findings. Separately, the run reconciles the generator against
+the detector: **1,047 of 1,047 injected faults detected**. That started at 92.4%, and closing the
+gap surfaced three real defects — including a date validator that accepted February 30th, and a
+duplicate-detection test that was undetectable by construction because the injector chose its donor
+in generation order while messages are written in timestamp order.
+
 ---
 
 ## What I work with
@@ -54,7 +72,7 @@ $10.6M sits in denials nobody worked.
 |---|---|
 | **Databases** | PostgreSQL, SQL Server, T-SQL — CTEs, window functions, query tuning, indexing |
 | **Modeling** | Kimball dimensional modeling, star and snowflake schemas, grain definition, SCD Type 1 & 2 |
-| **Healthcare data** | Epic's published Clarity/Caboodle data model, ICD-10-CM/PCS, CPT/HCPCS, DRG, CARC/RARC, HL7 v2, FHIR, HIPAA Safe Harbor, HRRP/HEDIS/MIPS |
+| **Healthcare data** | Epic's published Clarity/Caboodle data model, ICD-10-CM/PCS, CPT/HCPCS, DRG, CARC/RARC denial codes, HL7 v2 messaging (ADT/ORM/ORU), FHIR, HIPAA Safe Harbor, HRRP/HEDIS/MIPS |
 | **Python** | Pandas, NumPy, SQLAlchemy, scikit-learn, matplotlib |
 | **BI** | Tableau, Power BI, Excel |
 | **Practice** | Data validation and reconciliation, root-cause analysis, technical documentation, Git and pull-request review |
