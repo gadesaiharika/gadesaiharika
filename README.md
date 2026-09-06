@@ -20,7 +20,7 @@ All three run end to end from a clean clone. No manual data downloads, no Docker
 ### [hrrp-readmission-analytics](https://github.com/gadesaiharika/hrrp-readmission-analytics)
 **30-day readmission analytics and CMS HRRP risk** · PostgreSQL · SQL · Python · Tableau
 
-A Caboodle-style star schema over 12,000 synthetic inpatient encounters, with 30-day all-cause
+A Caboodle-style star schema over 11,920 synthetic inpatient encounters, with 30-day all-cause
 readmissions flagged by `LAG`/`LEAD` window functions and stratified across the six CMS HRRP
 conditions. Slowly Changing Dimension Type 2 on the patient dimension, so an encounter from 2023
 stays joined to where that patient lived in 2023.
