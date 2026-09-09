@@ -1,6 +1,6 @@
 # Sai Harika Gade
 
-**Research Data Analyst** at Mississippi State University · M.S. Computer Science (4.0 GPA)
+**Research Data Analyst** at Mississippi State University · M.S. Computer Science
 
 I build healthcare data pipelines and the validation suites that make their numbers trustworthy.
 Dimensional models, SQL reporting layers, and integrity checks — because a metric computed over a
