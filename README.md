@@ -18,7 +18,7 @@ intermittent failure that was quietly discarding an hour of compute per run.
 All three run end to end from a clean clone. No manual data downloads, no Docker.
 
 ### [hrrp-readmission-analytics](https://github.com/gadesaiharika/hrrp-readmission-analytics)
-**30-day readmission analytics and CMS HRRP risk** · PostgreSQL · SQL · Python · Tableau
+**30-day readmission analytics and CMS HRRP risk** · PostgreSQL · SQL · Python · [Tableau dashboard](https://public.tableau.com/app/profile/sai.harika.gade/viz/HRRPReadmissionDashboard/Dashboard2)
 
 A Caboodle-style star schema over 11,920 synthetic inpatient encounters, with 30-day all-cause
 readmissions flagged by `LAG`/`LEAD` window functions and stratified across the six CMS HRRP
