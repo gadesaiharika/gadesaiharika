@@ -30,7 +30,7 @@ were derived from two different expressions — a 30.4-day gap reported as "30 d
 read false, so filtering the dashboard returned a different population than the headline rate.
 
 ### [revenue-cycle-denials](https://github.com/gadesaiharika/revenue-cycle-denials)
-**Denials, AR, and collection analytics** · PostgreSQL · SQL · Python
+**Denials, AR, and collection analytics** · PostgreSQL · SQL · Python · [Tableau dashboard](https://public.tableau.com/app/profile/sai.harika.gade/viz/RevenueCycleDenialsAR/Dashboard1)
 
 A three-grain billing warehouse over 85,000 synthetic claims and 480,000 remittance postings.
 Denial Rate, First-Pass Yield, Net Collection Rate, Days in AR, and charge lag, each defined once in
