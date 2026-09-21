@@ -47,7 +47,7 @@ Findings: prior authorization is 50% of denied dollars, 85% of denied dollars we
 $10.6M sits in denials nobody worked.
 
 ### [complaint-resolution-analytics](https://github.com/gadesaiharika/complaint-resolution-analytics)
-**Consumer complaint resolution** · PostgreSQL · SQL · Python · **real public data**
+**Consumer complaint resolution** · PostgreSQL · SQL · Python · **real public data** · [Tableau dashboard](https://public.tableau.com/app/profile/sai.harika.gade/viz/ConsumerComplaintResolution/Dashboard1)
 
 17.9 million real complaints from the CFPB Consumer Complaint Database, streamed out of the published
 bulk file into a PostgreSQL star schema without ever unpacking it to disk.
