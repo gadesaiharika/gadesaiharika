@@ -2,12 +2,12 @@
 
 **Research Data Analyst** at Mississippi State University · M.S. Computer Science (4.0 GPA)
 
-I build healthcare data pipelines and the validation suites that make their numbers trustworthy.
+I build data pipelines and the validation suites that make their numbers trustworthy.
 Dimensional models, SQL reporting layers, and integrity checks — because a metric computed over a
 fact table that silently duplicated rows in a join is still a number, still plausible, and
 completely wrong.
 
-Currently working on genomics pipelines in Dr. Li's lab: re-architected one from an HPC cluster to
+Currently working on genomics pipelines in Dr. Zhang's lab: re-architected one from an HPC cluster to
 standard workstations, cut a step's memory footprint from 32 GB to under 1 GB, and root-caused an
 intermittent failure that was quietly discarding an hour of compute per run.
 
@@ -15,7 +15,7 @@ intermittent failure that was quietly discarding an hour of compute per run.
 
 ## Projects
 
-All three run end to end from a clean clone. No manual data downloads, no Docker.
+All four run end to end from a clean clone, no Docker. Three generate their own data; the fourth downloads a federal public file itself.
 
 ### [hrrp-readmission-analytics](https://github.com/gadesaiharika/hrrp-readmission-analytics)
 **30-day readmission analytics and CMS HRRP risk** · PostgreSQL · SQL · Python · [Tableau dashboard](https://public.tableau.com/app/profile/sai.harika.gade/viz/HRRPReadmissionDashboard/Dashboard2)
