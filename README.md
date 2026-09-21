@@ -46,6 +46,27 @@ adjustment codes instead of denial codes produces denial rates above 90%.
 Findings: prior authorization is 50% of denied dollars, 85% of denied dollars were preventable, and
 $10.6M sits in denials nobody worked.
 
+### [complaint-resolution-analytics](https://github.com/gadesaiharika/complaint-resolution-analytics)
+**Consumer complaint resolution** · PostgreSQL · SQL · Python · **real public data**
+
+17.9 million real complaints from the CFPB Consumer Complaint Database, streamed out of the published
+bulk file into a PostgreSQL star schema without ever unpacking it to disk.
+
+The analysis turns on the taxonomy. The CFPB renamed its product categories in 2017 and again in
+2023, both hard cutovers. Charted as published, credit reporting appears to collapse to zero in 2024
+— the year it tripled — and August 2023 double-counts, because both labels are live that month.
+
+Findings: credit card complaints close with monetary relief 16.71% of the time and credit reporting
+complaints 0.05% of the time. Credit reporting is 81.75% of the file, so the 1.28% overall rate is a
+statement about product mix rather than company behaviour. The three credit bureaus receive 78% of
+all complaints and behave nothing like each other — 59.46% of TransUnion complaints end in some
+relief against 12.42% at Experian.
+
+*24 validation checks.* The one the project turns on returns seven broken series against the
+published labels and none against the mapped ones. It cannot catch a one-way rename, where a label
+dies and never returns; a second check covers that case, and the README says so rather than claiming
+one check is enough.
+
 ### [hl7-interface-monitor](https://github.com/gadesaiharika/hl7-interface-monitor)
 **HL7 v2 parsing, validation, and interface health** · Python, standard library only
 
