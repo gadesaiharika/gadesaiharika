@@ -15,7 +15,7 @@ intermittent failure that was quietly discarding an hour of compute per run.
 
 ## Projects
 
-All four run end to end from a clean clone, no Docker. Three generate their own data; the fourth downloads a federal public file itself.
+All five run end to end from a clean clone, no Docker. Three generate their own data; two download federal public files themselves.
 
 ### [hrrp-readmission-analytics](https://github.com/gadesaiharika/hrrp-readmission-analytics)
 **30-day readmission analytics and CMS HRRP risk** · PostgreSQL · SQL · Python · [Tableau dashboard](https://public.tableau.com/app/profile/sai.harika.gade/viz/HRRPReadmissionDashboard/Dashboard2)
@@ -66,6 +66,29 @@ relief against 12.42% at Experian.
 published labels and none against the mapped ones. It cannot catch a one-way rename, where a label
 dies and never returns; a second check covers that case, and the README says so rather than claiming
 one check is enough.
+
+### [population-health-survey-analytics](https://github.com/gadesaiharika/population-health-survey-analytics)
+**Survey-weighted prevalence estimation** · R · `survey` package · **real CDC data**
+
+457,670 respondents from the CDC BRFSS 2024 public-use file, estimated twice: once declaring the
+full complex sampling design (stratified, clustered, raked) and once ignoring it.
+
+The two measures move in **opposite directions**. Cost barrier reads 9.51% unweighted and 12.33%
+weighted; diabetes reads 14.89% unweighted and 12.98% weighted. There is no correction factor — the
+direction depends on how a measure correlates with who was oversampled.
+
+It changes conclusions, not just decimals: state rankings shift a median of 5 and 6 places out of
+53, Nevada moves 28 places on diabetes, and Mississippi reads 20th unweighted against 6th weighted
+on the same file.
+
+*41 validation checks.* `nest = TRUE` is mandatory here because 25,800 of 43,913 sampling-unit ids
+repeat across strata — omit it and the point estimate still looks right while the variance is wrong.
+Building one design per jurisdiction instead of subsetting the national one took the state step from
+over 25 minutes to 11 seconds, and is exact rather than approximate because no stratum crosses a
+jurisdiction boundary.
+
+The SAS half is written and has not been run yet; it needs a SAS OnDemand account, and the README
+says so rather than implying a cross-check that has not happened.
 
 ### [hl7-interface-monitor](https://github.com/gadesaiharika/hl7-interface-monitor)
 **HL7 v2 parsing, validation, and interface health** · Python, standard library only
