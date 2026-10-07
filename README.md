@@ -68,7 +68,7 @@ dies and never returns; a second check covers that case, and the README says so 
 one check is enough.
 
 ### [population-health-survey-analytics](https://github.com/gadesaiharika/population-health-survey-analytics)
-**Survey-weighted prevalence estimation** · R · `survey` package · **real CDC data**
+**Survey-weighted prevalence estimation** · R + SAS · `survey` / `PROC SURVEYFREQ` · **real CDC data**
 
 457,670 respondents from the CDC BRFSS 2024 public-use file, estimated twice: once declaring the
 full complex sampling design (stratified, clustered, raked) and once ignoring it.
@@ -87,8 +87,11 @@ Building one design per jurisdiction instead of subsetting the national one took
 over 25 minutes to 11 seconds, and is exact rather than approximate because no stratum crosses a
 jurisdiction boundary.
 
-The SAS half is written and has not been run yet; it needs a SAS OnDemand account, and the README
-says so rather than implying a cross-check that has not happened.
+The same analysis is implemented a second time in SAS (`PROC SURVEYFREQ`), reading the same
+transport file and declaring the design independently. **All 108 estimates agree** — 2 national and
+all 106 state-level — the largest difference being 4.9e-10 percentage points. A national figure can
+agree by luck when two errors cancel; 106 state estimates cannot, which is why the comparison covers
+them.
 
 ### [hl7-interface-monitor](https://github.com/gadesaiharika/hl7-interface-monitor)
 **HL7 v2 parsing, validation, and interface health** · Python, standard library only
